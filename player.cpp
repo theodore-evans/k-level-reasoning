@@ -685,7 +685,7 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
                     control2.interact(control2Opponent);
                 }
 
-                // This is where the stuff happens
+                // calculate trajectory divergence
 
                 temp0 = divergence(opponent, 0, pertMax, arcLength, noPerturbations); // A vs B
                 accumulator += temp0;
