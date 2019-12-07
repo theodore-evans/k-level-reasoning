@@ -8,6 +8,8 @@
 //#include <random>
 //#include <chrono>
 #include <stdlib.h>
+#include <json/json.h>
+
 #include "matrix.h"
 #include "player.h"
 #include "config.h"
@@ -24,33 +26,57 @@ const double pi(4 * atan(1.0));
 double myRandom();
 void randomGame(Matrix &payoff, Matrix &oppPayoff, const double gamma, const double ep_x, const double ep_y, const double trace);
 
+// definitions for normal form game payoff matrices
+// TODO? add these to their own source file
+matrix::Matrix ipd_payoff(Json::Value config)
+{
+  double t = config["games"]["ipd"]["t"]
+  double r = config["games"]["ipd"]["r"]
+  double p = config["games"]["ipd"]["p"]
+  double s = config["games"]["ipd"]["s"]
+  double m = config["games"]["ipd"]["m"]
+  double c = config["games"]["ipd"]["c"]
+
+          //AllC                    //ALLD                //TFT
+/*ALLC*/   payoff(1,1) = r;         payoff(1,2) = s;      payoff(1,3) = r;
+/*ALLD*/   payoff(2,1) = t;         payoff(2,2) = p;      payoff(2,3) = (t + p * (m - 1)) / m;
+/*TFT*/    payoff(3,1) = r  - c/m;  payoff(3,2) = (s + p *(m - 1) - c)/m;  payoff(3,3) = r  - c/m;
+
+  return payoff;
+}
+
+matrix::Matrix rps_payoff()
+{
+/*rock*/        rps(1,1) = 0;    rps(1,2) = -1;  rps(1,3) = 1;
+/*paper*/       rps(2,1) = 1;    rps(2,2) = 0;   rps(2,3) = -1;
+/*scissors*/    rps(3,1) = -1;   rps(3,2) = 1;   rps(3,3) = 0;
+
+  return payoff;
+}
+
 int main(int argc, char* argv[])
 {
     try
     {
-        srand (time(NULL));
-//        unsigned seed = chrono::system_clock::now().time_since_epoch().count();
-//        normal_distribution<double> normal(0, 1);
-//        ranlux64_base_01 generator(seed);
-        // initialise random number generators
+        // initialise random number generator
+        srand (time(NULL))
 
+        //parse configuration json file
+        std::ifstream file_input("config.json");
+        Json::Reader reader;
+        Json::Value config;
+        reader.parse(file_input, config);
+
+        // TODO phase out the homemade config file parser in favour of a json-based system
+        // TODO remove these value declarations and declare at initialisation instead
         int N, dataPoints, xIntervals, yIntervals, noSamples, batch_x(0), batch_y(0), batchSize(1);
-
-        Config configSys("system.ini"), configA("alice.ini"), configB("bob.ini");
-
-        double  R, S, T, P, c, m, x0, y0, z0, x20, y20, z20, e_x, e_y, gamma;
+        double  x0, y0, z0, x20, y20, z20, e_x, e_y, gamma;
         double gMin, gMax, bMin, bMax, lMin, lMax, beta;
 
         std::string gameType;
 
         configSys.set(gameType, "gameType");
 
-        configSys.set(R, "R");
-        configSys.set(S, "S");
-        configSys.set(T, "T");
-        configSys.set(P, "P");
-        configSys.set(m, "m");
-        configSys.set(c, "c");
         configSys.set(gamma, "gamma");
         configSys.set(beta, "beta");
 
@@ -86,21 +112,8 @@ int main(int argc, char* argv[])
         configB.set(z20, "z0");
 
         // Initialise payoff matrices
-
-        Matrix prisoners(3,3), rps(3,3), I3(3,3), rps_x(3,3), rps_y(3,3), largeA(N, N), largeB(N, N), large(N, N);
+        Matrix ipd(3,3), rps(3,3), I3(3,3), rps_x(3,3), rps_y(3,3), largeA(N, N), largeB(N, N), large(N, N);
         I3(1,1) = 1; I3(2,2) = 1; I3(3,3) = 1;
-
-        // IMHOF IPD //
-                    //AllC              //ALLD              //TFT
-        /*ALLC*/    prisoners(1,1) = R;    prisoners(1,2) = S;    prisoners(1,3) = R;
-        /*ALLD*/    prisoners(2,1) = T;    prisoners(2,2) = P;    prisoners(2,3) = (T + P * (m - 1)) / m;
-        /*TFT*/     prisoners(3,1) = R  - c/m; prisoners(3,2) = (S + P *(m - 1) - c)/m; prisoners(3,3) = R  - c/m;
-
-        // RPS //
-
-        /*rock*/        rps(1,1) = 0;    rps(1,2) = -1;    rps(1,3) = 1;
-        /*paper*/       rps(2,1) = 1;    rps(2,2) = 0;    rps(2,3) = -1;
-        /*scissors*/    rps(3,1) = -1;  rps(3,2) = 1;   rps(3,3) = 0;
 
         // RPS BROKEN SYMMETRY (Sato et Al. 2001) //
 
