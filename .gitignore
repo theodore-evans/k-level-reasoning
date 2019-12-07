@@ -1,2 +1,5 @@
 #system generated files
 .DS_Store
+
+#makefiles and executables
+/model/bin/
