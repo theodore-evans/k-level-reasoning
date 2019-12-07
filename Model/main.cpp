@@ -12,7 +12,6 @@
 #include "player.h"
 #include "config.h"
 
-using namespace std;
 using namespace matrix;
 using namespace player;
 using namespace config;
@@ -124,8 +123,8 @@ int main(int argc, char* argv[])
 
         // instantiate players
 
-        cout << "Batch (" << batch_x+1 << "/" << batch_y+1 << ") out of (" << batchSize << "/" << batchSize << ")" << endl;
-        cout << "\nGametype = " << gameType << ", N = " << N;
+        std::cout << "Batch (" << batch_x+1 << "/" << batch_y+1 << ") out of (" << batchSize << "/" << batchSize << ")" << endl;
+        std::cout << "\nGametype = " << gameType << ", N = " << N;
 
         Matrix gameA, gameB;
 
@@ -158,13 +157,13 @@ int main(int argc, char* argv[])
             }
 
         Player alice(gameA, configA), bob(gameB, configB);
-        cout << ", k(" << alice.kLevel << ", " << bob.kLevel << ")" << endl;
+        std::cout << ", k(" << alice.kLevel << ", " << bob.kLevel << ")" << endl;
 
         alice.mapDivergence(bob, configSys, batch_x, batch_y, batchSize);
 
 
 //        alice.plotDivergence(bob, batch_x, pertMax, arcLength, noPerturbations, dataPoints);
-//        cout << endl;
+//        std::cout << endl;
 //            alice.kLevel = (alice.kLevel % 2) + 1;
 //            bob.kLevel = (bob.kLevel % 2) + 1;
 //            alice.plotDivergence(bob, batch_x, pertMax, arcLength, noPerturbations, dataPoints);
@@ -189,11 +188,11 @@ int main(int argc, char* argv[])
 
     catch(const string &err)
     {
-        cout << "\nException: " << err << endl;
+        std::cout << "\nException: " << err << endl;
     }
 
     catch(exception &ex)
     {
-        cout << "\nException: " << ex.what() << endl;
+        std::cout << "\nException: " << ex.what() << endl;
     }
 }
