@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
         double  R, S, T, P, c, m, x0, y0, z0, x20, y20, z20, e_x, e_y, gamma;
         double gMin, gMax, bMin, bMax, lMin, lMax, beta;
 
-        string gameType;
+        std::string gameType;
 
         configSys.set(gameType, "gameType");
 
@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
 
         // RANDOM LARGE GAMES //
 
-        ofstream matrix("matrix.dat");
+        std::ofstream matrix("matrix.dat");
 
         Matrix startpointA(N), startpointB(N);
 
@@ -123,7 +123,7 @@ int main(int argc, char* argv[])
 
         // instantiate players
 
-        std::cout << "Batch (" << batch_x+1 << "/" << batch_y+1 << ") out of (" << batchSize << "/" << batchSize << ")" << endl;
+        std::cout << "Batch (" << batch_x+1 << "/" << batch_y+1 << ") out of (" << batchSize << "/" << batchSize << ")" << std::endl;
         std::cout << "\nGametype = " << gameType << ", N = " << N;
 
         Matrix gameA, gameB;
@@ -157,13 +157,13 @@ int main(int argc, char* argv[])
             }
 
         Player alice(gameA, configA), bob(gameB, configB);
-        std::cout << ", k(" << alice.kLevel << ", " << bob.kLevel << ")" << endl;
+        std::cout << ", k(" << alice.kLevel << ", " << bob.kLevel << ")" << std::endl;
 
         alice.mapDivergence(bob, configSys, batch_x, batch_y, batchSize);
 
 
 //        alice.plotDivergence(bob, batch_x, pertMax, arcLength, noPerturbations, dataPoints);
-//        std::cout << endl;
+//        std::cout << std::endl;
 //            alice.kLevel = (alice.kLevel % 2) + 1;
 //            bob.kLevel = (bob.kLevel % 2) + 1;
 //            alice.plotDivergence(bob, batch_x, pertMax, arcLength, noPerturbations, dataPoints);
@@ -186,13 +186,13 @@ int main(int argc, char* argv[])
         return 0;
     }
 
-    catch(const string &err)
+    catch(const std::string &err)
     {
-        std::cout << "\nException: " << err << endl;
+        std::cout << "\nException: " << err << std::endl;
     }
 
-    catch(exception &ex)
+    catch(std::exception &ex)
     {
-        std::cout << "\nException: " << ex.what() << endl;
+        std::cout << "\nException: " << ex.what() << std::endl;
     }
 }
