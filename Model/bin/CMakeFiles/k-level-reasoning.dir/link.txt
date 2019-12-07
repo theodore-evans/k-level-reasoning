@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/k-level-reasoning.dir/main.cpp.o CMakeFiles/k-level-reasoning.dir/player.cpp.o CMakeFiles/k-level-reasoning.dir/config.cpp.o CMakeFiles/k-level-reasoning.dir/matrix.cpp.o  -o k-level-reasoning 
