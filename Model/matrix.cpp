@@ -4,7 +4,6 @@
 #include "matrix.h"
 
 using namespace matrix;
-using namespace std;
 
 const int zeroSizeFlag(-1);
 
@@ -66,7 +65,7 @@ Matrix &Matrix::operator=(const Matrix &rhs)
 double & Matrix::operator()(const int row, const int column) const
 {
     if( (row < 1 || row > rows_) || (column < 1 || column > columns_) ) {
-        stringstream errorOOB;
+        std::stringstream errorOOB;
         errorOOB << "Matrix element out of bounds (" << row << ", " << column << ")";
         throw(errorOOB.str());
     }
@@ -76,7 +75,7 @@ double & Matrix::operator()(const int row, const int column) const
 double & Matrix::operator[] (const int row) const
 {
     if( (row < 1 || row > rows_) ) {
-        stringstream errorOOB;
+        std::stringstream errorOOB;
         errorOOB << "Matrix element out of bounds [" << row << "]";
         throw(errorOOB.str());
         //return 0;
@@ -197,7 +196,7 @@ double Matrix::mod() const
    return sqrt(accumulator);
 }
 
-ostream &matrix::operator<<(ostream &os, const Matrix &rhs)
+std::ostream &matrix::operator<<(std::ostream &os, const Matrix &rhs)
 {
     for (int n(0); n < rhs.rows_; n++)
     {
@@ -209,7 +208,6 @@ ostream &matrix::operator<<(ostream &os, const Matrix &rhs)
         }
         os << '\n';
     }
-    os << endl;
+    os << std::endl;
     return os;
 }
-

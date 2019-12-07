@@ -13,7 +13,6 @@
 #include "config.h"
 
 using namespace player;
-using namespace std;
 using namespace matrix;
 using namespace config;
 
@@ -240,7 +239,7 @@ matrix::Matrix Player::mapStrategy(Player &me, Player &opponent, const int K)
 //        S += xComponents[p] * xComponents[p];
 //    }
 //
-////    cout << " " << S2 << " " << S << endl
+////    std::cout << " " << S2 << " " << S << std::endl
 //
 //    return recipN * (recipT * S2 - recipT2 * S);
 //}
@@ -358,43 +357,43 @@ double Player::divergence(Player &opponent, const int index, const double pertMa
 //{
 //    double accumulator(0), normalisation(0), normalisation2(0), phi(1.), lya;
 //
-//    stringstream ssFilename;
-//    string sFilename;
+//    std::stringstream ssFilename;
+//    std::string sFilename;
 //
 //    sFilename = "";
 //    ssFilename.str("");
 //    ssFilename << label << kLevel << opponent.kLevel << "_divA" << index << ".dat";
 //    sFilename = ssFilename.str();
 //
-//    ofstream foutPlayer(sFilename.c_str());
+//    std::ofstream foutPlayer(sFilename.c_str());
 //
 //    sFilename = "";
 //    ssFilename.str("");
 //    ssFilename << label << kLevel << opponent.kLevel << "_divB" << index << ".dat";
 //    sFilename = ssFilename.str();
 //
-//    ofstream foutDummy(sFilename.c_str());
+//    std::ofstream foutDummy(sFilename.c_str());
 //
 //    Player dummy(*this), dummyOpponent(opponent);
 //
 //    initialise();
 //    opponent.match(*this);
 //
-//    cout << "\nRunning k(" << kLevel << ", " << opponent.kLevel << ")" << endl;
-//    cout << "\nb_1 = " << beta << ", l_2 = " << lambda << endl << "b_2 = " << opponent.beta << ", l_2 = " << opponent.lambda << endl;
+//    std::cout << "\nRunning k(" << kLevel << ", " << opponent.kLevel << ")" << std::endl;
+//    std::cout << "\nb_1 = " << beta << ", l_2 = " << lambda << std::endl << "b_2 = " << opponent.beta << ", l_2 = " << opponent.lambda << std::endl;
 //
 //    //int T0 = (int)((double)noPoints * 0.66);
 //    for (int q(0); q < noPoints; ++q) // equilibrate
 //    {
 //        interact(opponent);
-//        foutPlayer << *this << endl;
+//        foutPlayer << *this << std::endl;
 //    }
 //
 //    accumulator = 0;
 //
 //    for (int d(0); d < noPerturbations; ++d)
 //    {
-//        foutDummy << endl;
+//        foutDummy << std::endl;
 //
 //        // generate perturbation vector
 //        for (int i(1); i <= N; ++i) {
@@ -463,8 +462,8 @@ double Player::divergence(Player &opponent, const int index, const double pertMa
 //        interact(opponent);
 //        dummy.interact(dummyOpponent);
 //
-//        foutPlayer << *this << endl;
-//        foutDummy << "1" << endl << endl;
+//        foutPlayer << *this << std::endl;
+//        foutDummy << "1" << std::endl << std::endl;
 //
 //        perturb = dummy.strategy - strategy;
 //        perturbOpp = dummyOpponent.strategy - opponent.strategy;
@@ -481,8 +480,8 @@ double Player::divergence(Player &opponent, const int index, const double pertMa
 //            interact(opponent);
 //            dummy.interact(dummyOpponent);
 //
-//            foutPlayer << *this << endl;
-//            foutDummy << dummy << endl;
+//            foutPlayer << *this << std::endl;
+//            foutDummy << dummy << std::endl;
 //
 //            perturb = dummy.strategy - strategy;    // divergence vectors
 //            perturbOpp = dummyOpponent.strategy - opponent.strategy;
@@ -506,7 +505,7 @@ double Player::divergence(Player &opponent, const int index, const double pertMa
 //        accumulator += log(phi); // divergence
 //    }
 //
-//    cout << "\nLargest Lyapunov exponent = " << accumulator / ((double)noPerturbations * (double)arcLength); // average Lyapunov over phase space evolution
+//    std::cout << "\nLargest Lyapunov exponent = " << accumulator / ((double)noPerturbations * (double)arcLength); // average Lyapunov over phase space evolution
 //}
 
 
@@ -518,7 +517,7 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
     double temp0, temp1, temp2;
     double *x1, *x2, *y1, *y2;
     int dataPoints, noPerturbations, arcLength, noSamples, xIntervals, yIntervals;
-    string xParameter, yParameter, gameType;
+    std::string xParameter, yParameter, gameType;
 
     Player control1(*this), control1Opponent(opponent), control2(*this), control2Opponent(opponent);
     //control1.kLevel = 1;
@@ -538,8 +537,8 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
     configSys.set(gamma, "gamma");
     configSys.set(trace, "trace");
 
-    stringstream ssFilename;
-    string sFilename;
+    std::stringstream ssFilename;
+    std::string sFilename;
 
     sFilename = "";
     ssFilename.str("");
@@ -607,14 +606,14 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
     ssFilename << batch_y;
     sFilename = ssFilename.str() + ".dat";
 
-    cout << "\nWriting to " << sFilename << endl;
+    std::cout << "\nWriting to " << sFilename << std::endl;
 
-    ofstream foutPlayer(sFilename.c_str());
+    std::ofstream foutPlayer(sFilename.c_str());
 
     ssFilename << "all";
     sFilename = ssFilename.str() + ".dat";
 
-    ofstream foutPlayerAll(sFilename.c_str());
+    std::ofstream foutPlayerAll(sFilename.c_str());
 
     // batch processing modifications
     double dx( (xMax - xMin)/(double)xIntervals ), dy( (yMax - yMin)/(double)yIntervals );
@@ -628,7 +627,7 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
     yMin += dy * yIntervals * batch_y;
     yMax = yMin + dy * yIntervals;
 
-    cout << "Calculating LLE over (" << noPerturbations << "|" << arcLength << ") perturbations after " << (int)(dataPoints * 0.66) << " rounds." << endl;
+    std::cout << "Calculating LLE over (" << noPerturbations << "|" << arcLength << ") perturbations after " << (int)(dataPoints * 0.66) << " rounds." << std::endl;
 
     *y1 = yMin;
     *y2 = yMin;
@@ -653,7 +652,7 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
 
             for (int p(0); p < noSamples; ++p)
             {
-                cout << "[" << p << "/" << counter << "/" << xIntervals*yIntervals << "] " << yParameter << " = " << *y1 << ", " << xParameter << " = " << *x1 << endl;
+                std::cout << "[" << p << "/" << counter << "/" << xIntervals*yIntervals << "] " << yParameter << " = " << *y1 << ", " << xParameter << " = " << *x1 << std::endl;
 
                 // generate random game if required
                 if (gameType == "large") randomGame(payoff, opponent.payoff, gamma, ep_x, ep_y, trace);
@@ -665,7 +664,6 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
                     opponent.payoff(t, t) = opponent.payoff(t, t) * trace + ep_y;
                 }
 
-                // don't initialise at the fixed point for RPS, otherwise start in the centre.
                 if (gameType == "rps") initialiseRandom();
                 else initialise();
 
@@ -696,12 +694,12 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
                 temp2 = control2.divergence(control2Opponent, 0, pertMax, arcLength, noPerturbations);
                 accumulator2 += temp2;
 
-                foutPlayerAll << *x1 << " " << *y1 << " " << temp0 << " " << temp2 << " " << temp1 << endl;
+                foutPlayerAll << *x1 << " " << *y1 << " " << temp0 << " " << temp2 << " " << temp1 << std::endl;
 
             }
 
             // output averaged values
-            foutPlayer << *x1 << " " << *y1 << " " << accumulator / (double)noSamples << " " << accumulator2 / (double)noSamples << " " << accumulator1 / (double)noSamples << endl;
+            foutPlayer << *x1 << " " << *y1 << " " << accumulator / (double)noSamples << " " << accumulator2 / (double)noSamples << " " << accumulator1 / (double)noSamples << std::endl;
         }
     }
 }
@@ -709,19 +707,19 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
 //// varying beta and lambda
 //void Player::mapVarianceBL(Player &opponent, Matrix startpoint, const int index, const int noSamples, const int xIntervals, const int yIntervals, const double xMin, const double xMax, const double yMin, const double yMax, const int T)
 //{
-//    stringstream ssFilename;
-//    string sFilename;
+//    std::stringstream ssFilename;
+//    std::string sFilename;
 //
 //    sFilename = "";
 //    ssFilename.str("");
 //    ssFilename << label << "_variance" << index << ".dat";
 //    sFilename = ssFilename.str();
 //
-//    ofstream foutPlayer(sFilename.c_str());
+//    std::ofstream foutPlayer(sFilename.c_str());
 //
 //    double xInterval( (xMax - xMin)/(double)xIntervals ), yInterval( (yMax - yMin)/(double)yIntervals );
 //
-//    cout << "Calculating variance between rounds " << T * 0.8 << " - " << T << endl;
+//    std::cout << "Calculating variance between rounds " << T * 0.8 << " - " << T << std::endl;
 //
 //    for (double x(xMin + xInterval); x <= xMax; x += xInterval)
 //    {
@@ -734,7 +732,7 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
 //
 //            opponent.lambda = y;
 //
-//            cout << "beta = " << beta << ", lambda = " << lambda;
+//            std::cout << "beta = " << beta << ", lambda = " << lambda;
 //
 //            initialise(startpoint);
 //            opponent.match(*this);
@@ -757,8 +755,8 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
 //                }
 //            }
 //
-//            foutPlayer << endl;
-//            cout << " ... done" << endl;
+//            foutPlayer << std::endl;
+//            std::cout << " ... done" << std::endl;
 //        }
 //    }
 //}
@@ -766,20 +764,20 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
 //// varying lambda and gamma
 //void Player::mapVarianceGL(Player &opponent, Matrix startpoint, const int index, const int noSamples, const int xIntervals, const int yIntervals, const double xMin, const double xMax, const double yMin, const double yMax, const int T)
 //{
-//    stringstream ssFilename;
-//    string sFilename;
+//    std::stringstream ssFilename;
+//    std::string sFilename;
 //
 //    sFilename = "";
 //    ssFilename.str("");
 //    ssFilename << label << "_varianceB" << index << ".dat";
 //    sFilename = ssFilename.str();
 //
-//    ofstream foutPlayer(sFilename.c_str());
+//    std::ofstream foutPlayer(sFilename.c_str());
 //
 //    double xInterval( (xMax - xMin)/(double)xIntervals ), yInterval( (yMax - yMin)/(double)yIntervals );
 //    double gamma, accumulator, counter(0);
 //
-//    cout << "Calculating variance between rounds " << T * 0.666 << " - " << T << endl;
+//    std::cout << "Calculating variance between rounds " << T * 0.666 << " - " << T << std::endl;
 //
 //    for (double x(xMin + xInterval); x < xMax; x += xInterval)
 //    {
@@ -804,7 +802,7 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
 //                initialise(); //  initial conditions
 //                opponent.match(*this);
 //
-//                cout << fixed << "gamma = " << gamma << ", lambda = " << lambda << " " << "[" << counter << "/" << noSamples*xIntervals*yIntervals << "]" << endl;
+//                std::cout << std::fixed << "gamma = " << gamma << ", lambda = " << lambda << " " << "[" << counter << "/" << noSamples*xIntervals*yIntervals << "]" << std::endl;
 //
 //                randomGame(payoff, opponent.payoff, gamma, 0, 0, 1);
 //
@@ -812,7 +810,7 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
 //            }
 //
 //            foutPlayer << " " << accumulator / (double)noSamples;
-//            foutPlayer << endl;
+//            foutPlayer << std::endl;
 //
 //        }
 //    }
@@ -820,26 +818,26 @@ void Player::mapDivergence(Player &opponent, Config &configSys, const int batch_
 
 void Player::plotTrajectories(Player &opponent, Matrix startpointA, Matrix startpointB, const int index, const int noTrajectories, const int noPoints)
 {
-    stringstream ssFilename;
-    string sFilename;
+    std::stringstream ssFilename;
+    std::string sFilename;
 
     sFilename = "";
     ssFilename.str("");
     ssFilename << label << "_traj" << index << ".dat";
     sFilename = ssFilename.str();
 
-    ofstream foutPlayer(sFilename.c_str());
+    std::ofstream foutPlayer(sFilename.c_str());
 
     sFilename = "";
     ssFilename.str("");
     ssFilename << opponent.label << "_traj" << index << ".dat";
     sFilename = ssFilename.str();
 
-    ofstream foutOpponent(sFilename.c_str());
+    std::ofstream foutOpponent(sFilename.c_str());
 
     for (int p(0); p < noTrajectories; ++p) // plot m trajectories
     {
-        cout << "\nPlotting trajectory " << p << "; lambda=" << lambda <<  " beta=" << beta << endl;
+        std::cout << "\nPlotting trajectory " << p << "; lambda=" << lambda <<  " beta=" << beta << std::endl;
 
         initialise(startpointA);
         opponent.initialise(startpointB);
@@ -848,34 +846,34 @@ void Player::plotTrajectories(Player &opponent, Matrix startpointA, Matrix start
         {
             interact(opponent);
 
-            foutPlayer << fixed << setprecision(8) << *this << endl;
-            foutOpponent << fixed << setprecision(8) << opponent << endl;
+            foutPlayer << std::fixed << std::setprecision(8) << *this << std::endl;
+            foutOpponent << std::fixed << std::setprecision(8) << opponent << std::endl;
         }
     }
 }
 
 void Player::plotTrajectories(Player &opponent, const int index, const int noTrajectories, const int noPoints)
 {
-    stringstream ssFilename;
-    string sFilename;
+    std::stringstream ssFilename;
+    std::string sFilename;
 
     sFilename = "";
     ssFilename.str("");
     ssFilename << label << "_traj" << index << ".dat";
     sFilename = ssFilename.str();
 
-    ofstream foutPlayer(sFilename.c_str());
+    std::ofstream foutPlayer(sFilename.c_str());
 
     sFilename = "";
     ssFilename.str("");
     ssFilename << opponent.label << "_traj" << index << ".dat";
     sFilename = ssFilename.str();
 
-    ofstream foutOpponent(sFilename.c_str());
+    std::ofstream foutOpponent(sFilename.c_str());
 
     for (int p(0); p < noTrajectories; ++p) // plot m trajectories
     {
-        cout << "\nPlotting trajectory " << p << "; lambda=" << lambda <<  " beta=" << beta << endl;
+        std::cout << "\nPlotting trajectory " << p << "; lambda=" << lambda <<  " beta=" << beta << std::endl;
 
         initialiseRandom();
         opponent.match(*this);
@@ -884,25 +882,25 @@ void Player::plotTrajectories(Player &opponent, const int index, const int noTra
         {
             interact(opponent);
 
-            foutPlayer << fixed << setprecision(8) << *this << endl;
-            foutOpponent << fixed << setprecision(8) << opponent << endl;
+            foutPlayer << std::fixed << std::setprecision(8) << *this << std::endl;
+            foutOpponent << std::fixed << std::setprecision(8) << opponent << std::endl;
         }
     }
 }
 
 void Player::plotVectorField(const int intervals)
 {
-    stringstream ssFilename;
-    string sFilename;
+    std::stringstream ssFilename;
+    std::string sFilename;
 
     ssFilename.str("");
     ssFilename << label << "_vector.dat";
     sFilename = ssFilename.str();
 
-    ofstream fout(sFilename.c_str());
+    std::ofstream fout(sFilename.c_str());
 
     double  x(0), y(0), z(0);
-    pair<double,double> ternary;
+    std::pair<double,double> ternary;
     Matrix vector(N);
 
     for (int n(0); n < intervals; ++n)
@@ -921,21 +919,21 @@ void Player::plotVectorField(const int intervals)
 
                 ternary = tern(z, x);
 
-                fout << fixed << setprecision(8) << ternary.first << " " << ternary.second;
+                fout << std::fixed << std::setprecision(8) << ternary.first << " " << ternary.second;
 
                 fout << "\t";
                 vector = mapStrategy(*this, *this, kLevel) - strategy;
                 ternary = tern(vector[3], vector[1]);
 
-                fout << ternary.first << " " << ternary.second << endl;
+                fout << ternary.first << " " << ternary.second << std::endl;
             }
         }
     }
 }
 
-pair<double, double> Player::tern(double a, double b) const
+std::pair<double, double> Player::tern(double a, double b) const
 {
-	pair <double, double> ternary;
+	std::pair <double, double> ternary;
 
 	ternary.first = 0.5*(2*a+b);
 	ternary.second = sqrt3over2 * b;
@@ -943,13 +941,13 @@ pair<double, double> Player::tern(double a, double b) const
 	return ternary;
 }
 
-ostream &player::operator<<(ostream &os, const Player &player)
+std::ostream &player::operator<<(std::ostream &os, const Player &player)
 {
     for (int i(1); i <=player.N; ++i) {
         os << player.strategy[i] << " ";
     }
 
-    pair<double,double> ternary = player.tern(player.strategy[3], player.strategy[1]);
+    std::pair<double,double> ternary = player.tern(player.strategy[3], player.strategy[1]);
     os << "\t" << ternary.first << " " << ternary.second << "\t";
 
     return os;
