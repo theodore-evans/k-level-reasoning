@@ -6,5 +6,5 @@ CXX_FLAGS =  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/theoevans/k-level-reasoning 
+CXX_INCLUDES = -I/Users/theoevans/k-level-reasoning/model 
 

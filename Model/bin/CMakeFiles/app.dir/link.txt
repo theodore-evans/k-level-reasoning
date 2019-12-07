@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/app.dir/main.cpp.o CMakeFiles/app.dir/player.cpp.o CMakeFiles/app.dir/config.cpp.o CMakeFiles/app.dir/matrix.cpp.o  -o app 

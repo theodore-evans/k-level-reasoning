@@ -1,4 +1,4 @@
-# Install script for directory: /Users/theoevans/k-level-reasoning
+# Install script for directory: /Users/theoevans/k-level-reasoning/model
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/theoevans/k-level-reasoning/bin/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/theoevans/k-level-reasoning/model/bin/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

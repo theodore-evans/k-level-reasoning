@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/theoevans/k-level-reasoning/config.cpp" "/Users/theoevans/k-level-reasoning/bin/CMakeFiles/k-level-reasoning.dir/config.cpp.o"
-  "/Users/theoevans/k-level-reasoning/main.cpp" "/Users/theoevans/k-level-reasoning/bin/CMakeFiles/k-level-reasoning.dir/main.cpp.o"
-  "/Users/theoevans/k-level-reasoning/matrix.cpp" "/Users/theoevans/k-level-reasoning/bin/CMakeFiles/k-level-reasoning.dir/matrix.cpp.o"
-  "/Users/theoevans/k-level-reasoning/player.cpp" "/Users/theoevans/k-level-reasoning/bin/CMakeFiles/k-level-reasoning.dir/player.cpp.o"
+  "/Users/theoevans/k-level-reasoning/model/config.cpp" "/Users/theoevans/k-level-reasoning/model/bin/CMakeFiles/k-level-reasoning.dir/config.cpp.o"
+  "/Users/theoevans/k-level-reasoning/model/main.cpp" "/Users/theoevans/k-level-reasoning/model/bin/CMakeFiles/k-level-reasoning.dir/main.cpp.o"
+  "/Users/theoevans/k-level-reasoning/model/matrix.cpp" "/Users/theoevans/k-level-reasoning/model/bin/CMakeFiles/k-level-reasoning.dir/matrix.cpp.o"
+  "/Users/theoevans/k-level-reasoning/model/player.cpp" "/Users/theoevans/k-level-reasoning/model/bin/CMakeFiles/k-level-reasoning.dir/player.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

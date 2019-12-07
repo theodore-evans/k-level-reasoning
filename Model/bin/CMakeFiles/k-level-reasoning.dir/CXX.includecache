@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/theoevans/k-level-reasoning/config.cpp
+/Users/theoevans/k-level-reasoning/model/config.cpp
 iostream
 -
 fstream
@@ -14,17 +14,51 @@ fstream
 string
 -
 config.h
-/Users/theoevans/k-level-reasoning/config.h
+/Users/theoevans/k-level-reasoning/model/config.h
 
-/Users/theoevans/k-level-reasoning/config.h
+/Users/theoevans/k-level-reasoning/model/config.h
 map
 -
 string
 -
 
-/Users/theoevans/k-level-reasoning/matrix.h
+/Users/theoevans/k-level-reasoning/model/main.cpp
+iostream
+-
+iomanip
+-
+fstream
+-
+sstream
+-
+vector
+-
+cmath
+-
+ctime
+-
+stdlib.h
+-
+matrix.h
+/Users/theoevans/k-level-reasoning/model/matrix.h
+player.h
+/Users/theoevans/k-level-reasoning/model/player.h
+config.h
+/Users/theoevans/k-level-reasoning/model/config.h
 
-/Users/theoevans/k-level-reasoning/player.cpp
+/Users/theoevans/k-level-reasoning/model/matrix.cpp
+iostream
+-
+sstream
+-
+cmath
+-
+matrix.h
+/Users/theoevans/k-level-reasoning/model/matrix.h
+
+/Users/theoevans/k-level-reasoning/model/matrix.h
+
+/Users/theoevans/k-level-reasoning/model/player.cpp
 iostream
 -
 iomanip
@@ -42,17 +76,17 @@ time.h
 stdlib.h
 -
 matrix.h
-/Users/theoevans/k-level-reasoning/matrix.h
+/Users/theoevans/k-level-reasoning/model/matrix.h
 player.h
-/Users/theoevans/k-level-reasoning/player.h
+/Users/theoevans/k-level-reasoning/model/player.h
 config.h
-/Users/theoevans/k-level-reasoning/config.h
+/Users/theoevans/k-level-reasoning/model/config.h
 
-/Users/theoevans/k-level-reasoning/player.h
+/Users/theoevans/k-level-reasoning/model/player.h
 matrix.h
-/Users/theoevans/k-level-reasoning/matrix.h
+/Users/theoevans/k-level-reasoning/model/matrix.h
 config.h
-/Users/theoevans/k-level-reasoning/config.h
+/Users/theoevans/k-level-reasoning/model/config.h
 vector
 -
 

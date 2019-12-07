@@ -43,10 +43,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/theoevans/k-level-reasoning
+CMAKE_SOURCE_DIR = /Users/theoevans/k-level-reasoning/model
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/theoevans/k-level-reasoning/bin
+CMAKE_BINARY_DIR = /Users/theoevans/k-level-reasoning/model/bin
 
 # Include any dependencies generated for this target.
 include CMakeFiles/k-level-reasoning.dir/depend.make
@@ -59,55 +59,55 @@ include CMakeFiles/k-level-reasoning.dir/flags.make
 
 CMakeFiles/k-level-reasoning.dir/main.cpp.o: CMakeFiles/k-level-reasoning.dir/flags.make
 CMakeFiles/k-level-reasoning.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/theoevans/k-level-reasoning/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/k-level-reasoning.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/k-level-reasoning.dir/main.cpp.o -c /Users/theoevans/k-level-reasoning/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/theoevans/k-level-reasoning/model/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/k-level-reasoning.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/k-level-reasoning.dir/main.cpp.o -c /Users/theoevans/k-level-reasoning/model/main.cpp
 
 CMakeFiles/k-level-reasoning.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/k-level-reasoning.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/theoevans/k-level-reasoning/main.cpp > CMakeFiles/k-level-reasoning.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/theoevans/k-level-reasoning/model/main.cpp > CMakeFiles/k-level-reasoning.dir/main.cpp.i
 
 CMakeFiles/k-level-reasoning.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/k-level-reasoning.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/theoevans/k-level-reasoning/main.cpp -o CMakeFiles/k-level-reasoning.dir/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/theoevans/k-level-reasoning/model/main.cpp -o CMakeFiles/k-level-reasoning.dir/main.cpp.s
 
 CMakeFiles/k-level-reasoning.dir/player.cpp.o: CMakeFiles/k-level-reasoning.dir/flags.make
 CMakeFiles/k-level-reasoning.dir/player.cpp.o: ../player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/theoevans/k-level-reasoning/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/k-level-reasoning.dir/player.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/k-level-reasoning.dir/player.cpp.o -c /Users/theoevans/k-level-reasoning/player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/theoevans/k-level-reasoning/model/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/k-level-reasoning.dir/player.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/k-level-reasoning.dir/player.cpp.o -c /Users/theoevans/k-level-reasoning/model/player.cpp
 
 CMakeFiles/k-level-reasoning.dir/player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/k-level-reasoning.dir/player.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/theoevans/k-level-reasoning/player.cpp > CMakeFiles/k-level-reasoning.dir/player.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/theoevans/k-level-reasoning/model/player.cpp > CMakeFiles/k-level-reasoning.dir/player.cpp.i
 
 CMakeFiles/k-level-reasoning.dir/player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/k-level-reasoning.dir/player.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/theoevans/k-level-reasoning/player.cpp -o CMakeFiles/k-level-reasoning.dir/player.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/theoevans/k-level-reasoning/model/player.cpp -o CMakeFiles/k-level-reasoning.dir/player.cpp.s
 
 CMakeFiles/k-level-reasoning.dir/config.cpp.o: CMakeFiles/k-level-reasoning.dir/flags.make
 CMakeFiles/k-level-reasoning.dir/config.cpp.o: ../config.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/theoevans/k-level-reasoning/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/k-level-reasoning.dir/config.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/k-level-reasoning.dir/config.cpp.o -c /Users/theoevans/k-level-reasoning/config.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/theoevans/k-level-reasoning/model/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/k-level-reasoning.dir/config.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/k-level-reasoning.dir/config.cpp.o -c /Users/theoevans/k-level-reasoning/model/config.cpp
 
 CMakeFiles/k-level-reasoning.dir/config.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/k-level-reasoning.dir/config.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/theoevans/k-level-reasoning/config.cpp > CMakeFiles/k-level-reasoning.dir/config.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/theoevans/k-level-reasoning/model/config.cpp > CMakeFiles/k-level-reasoning.dir/config.cpp.i
 
 CMakeFiles/k-level-reasoning.dir/config.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/k-level-reasoning.dir/config.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/theoevans/k-level-reasoning/config.cpp -o CMakeFiles/k-level-reasoning.dir/config.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/theoevans/k-level-reasoning/model/config.cpp -o CMakeFiles/k-level-reasoning.dir/config.cpp.s
 
 CMakeFiles/k-level-reasoning.dir/matrix.cpp.o: CMakeFiles/k-level-reasoning.dir/flags.make
 CMakeFiles/k-level-reasoning.dir/matrix.cpp.o: ../matrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/theoevans/k-level-reasoning/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/k-level-reasoning.dir/matrix.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/k-level-reasoning.dir/matrix.cpp.o -c /Users/theoevans/k-level-reasoning/matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/theoevans/k-level-reasoning/model/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/k-level-reasoning.dir/matrix.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/k-level-reasoning.dir/matrix.cpp.o -c /Users/theoevans/k-level-reasoning/model/matrix.cpp
 
 CMakeFiles/k-level-reasoning.dir/matrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/k-level-reasoning.dir/matrix.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/theoevans/k-level-reasoning/matrix.cpp > CMakeFiles/k-level-reasoning.dir/matrix.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/theoevans/k-level-reasoning/model/matrix.cpp > CMakeFiles/k-level-reasoning.dir/matrix.cpp.i
 
 CMakeFiles/k-level-reasoning.dir/matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/k-level-reasoning.dir/matrix.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/theoevans/k-level-reasoning/matrix.cpp -o CMakeFiles/k-level-reasoning.dir/matrix.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/theoevans/k-level-reasoning/model/matrix.cpp -o CMakeFiles/k-level-reasoning.dir/matrix.cpp.s
 
 # Object files for target k-level-reasoning
 k__level__reasoning_OBJECTS = \
@@ -125,7 +125,7 @@ k-level-reasoning: CMakeFiles/k-level-reasoning.dir/config.cpp.o
 k-level-reasoning: CMakeFiles/k-level-reasoning.dir/matrix.cpp.o
 k-level-reasoning: CMakeFiles/k-level-reasoning.dir/build.make
 k-level-reasoning: CMakeFiles/k-level-reasoning.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/theoevans/k-level-reasoning/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable k-level-reasoning"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/theoevans/k-level-reasoning/model/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable k-level-reasoning"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/k-level-reasoning.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -138,6 +138,6 @@ CMakeFiles/k-level-reasoning.dir/clean:
 .PHONY : CMakeFiles/k-level-reasoning.dir/clean
 
 CMakeFiles/k-level-reasoning.dir/depend:
-	cd /Users/theoevans/k-level-reasoning/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/theoevans/k-level-reasoning /Users/theoevans/k-level-reasoning /Users/theoevans/k-level-reasoning/bin /Users/theoevans/k-level-reasoning/bin /Users/theoevans/k-level-reasoning/bin/CMakeFiles/k-level-reasoning.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/theoevans/k-level-reasoning/model/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/theoevans/k-level-reasoning/model /Users/theoevans/k-level-reasoning/model /Users/theoevans/k-level-reasoning/model/bin /Users/theoevans/k-level-reasoning/model/bin /Users/theoevans/k-level-reasoning/model/bin/CMakeFiles/k-level-reasoning.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/k-level-reasoning.dir/depend
 
