@@ -2,8 +2,5 @@
 .DS_Store
 
 #makefiles and executables
-<<<<<<< HEAD
 model/bin/
-=======
-/model/bin/
->>>>>>> 59e826376f1586c704722b66ce39a42b01ec76e2
+
