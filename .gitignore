@@ -3,4 +3,5 @@
 
 #makefiles and executables
 model/bin/
-
+!model/bin/*.ini
+!model/bin/*.json
