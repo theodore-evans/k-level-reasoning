@@ -55,7 +55,7 @@ bool Config::checkSParameter(const std::string parameterName)
 
 bool Config::loadParameters()
 {
-    std::ifstream fetch(filename_);
+    ifstream fetch(filename_);
 
     if (!fetch) return false;
 
@@ -73,7 +73,7 @@ bool Config::loadParameters()
             nParameters_[parameterName] = nParameterValue;
         }
 
-        else if (parameterType  == "std::string")
+        else if (parameterType  == "string")
         {
             fetch >> sParameterValue;
             sParameters_[parameterName] = sParameterValue;
