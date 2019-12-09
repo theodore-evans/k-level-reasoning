@@ -30,14 +30,14 @@ void randomGame(Matrix &payoff, Matrix &oppPayoff, const double gamma, const dou
 // TODO? add these to their own source file
 matrix::Matrix ipd_payoff(Json::Value config)
 {
-  double t = std::atof(config["games"]["ipd"]["t"]);
-  double r = std::atof(config["games"]["ipd"]["r"]);
-  double p = std::atof(config["games"]["ipd"]["p"]);
-  double s = std::atof(config["games"]["ipd"]["s"]);
-  double m = std::atof(config["games"]["ipd"]["m"]);
-  double c = std::atof(config["games"]["ipd"]["c"]);
+  double t = config["games"]["ipd"].get("t").asDouble();
+  double r = config["games"]["ipd"].get("r").asDouble();
+  double p = config["games"]["ipd"].get("p").asDouble();
+  double s = config["games"]["ipd"].get("s").asDouble();
+  double m = config["games"]["ipd"].get("m").asDouble();
+  double c = config["games"]["ipd"].get("c").asDouble();
 
-  matrix::Matrix payoff(3,3)
+  matrix::Matrix payoff(3,3);
           //AllC                    //ALLD                //TFT
 /*ALLC*/   payoff(1,1) = r;         payoff(1,2) = s;      payoff(1,3) = r;
 /*ALLD*/   payoff(2,1) = t;         payoff(2,2) = p;      payoff(2,3) = (t + p * (m - 1)) / m;
@@ -48,7 +48,7 @@ matrix::Matrix ipd_payoff(Json::Value config)
 
 matrix::Matrix rps_payoff()
 {
-  matrix::Matrix payoff(3,3)
+  matrix::Matrix payoff(3,3);
 
 /*rock*/        payoff(1,1) = 0;    payoff(1,2) = -1;  payoff(1,3) = 1;
 /*paper*/       payoff(2,1) = 1;    payoff(2,2) = 0;   payoff(2,3) = -1;
