@@ -76,6 +76,8 @@ int main(int argc, char* argv[])
         double  x0, y0, z0, x20, y20, z20, e_x, e_y, gamma;
         double gMin, gMax, bMin, bMax, lMin, lMax, beta;
 
+        Config configSys("system.ini"), configA("alice.ini"), configB("bob.ini");
+
         std::string gameType;
 
         configSys.set(gameType, "gameType");
