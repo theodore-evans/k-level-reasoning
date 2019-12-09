@@ -5,3 +5,8 @@
 model/bin/
 !model/bin/*.ini
 !model/bin/*.json
+
+model/CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+Makefile
