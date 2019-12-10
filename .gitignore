@@ -1,10 +1,8 @@
 #system generated files
 .DS_Store
 
-#makefiles and executables
-model/bin/
-!model/bin/*.ini
-!model/bin/*.json
+#output data files
+*.dat
 
 model/CMakeFiles
 CMakeCache.txt
