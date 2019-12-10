@@ -55,7 +55,7 @@ bool Config::checkSParameter(const std::string parameterName)
 
 bool Config::loadParameters()
 {
-    ifstream fetch(filename_);
+    std::ifstream fetch(filename_);
 
     if (!fetch) return false;
 
