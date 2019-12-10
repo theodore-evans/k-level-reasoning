@@ -70,6 +70,14 @@ int main(int argc, char* argv[])
         Json::Value config;
         reader.parse(file_input, config);
 
+        Json::Value games = config["games"];
+        std::cout << "Games loaded from config.json:" << std::endl;
+
+        for (Json::ValueIterator it = games.begin(); it != games.end(); ++it)
+        {
+          std::cout << (*it).asString() << std::endl;
+        }
+
         // TODO phase out the homemade config file parser in favour of a json-based system
         // TODO remove these value declarations and declare at initialisation instead
         int N, dataPoints, xIntervals, yIntervals, noSamples, batch_x(0), batch_y(0), batchSize(1);
