@@ -30,12 +30,12 @@ void randomGame(Matrix &payoff, Matrix &oppPayoff, const double gamma, const dou
 // TODO? add these to their own source file
 matrix::Matrix ipd_payoff(Json::Value config)
 {
-  double t = config["games"]["ipd"].get("t").asDouble();
-  double r = config["games"]["ipd"].get("r").asDouble();
-  double p = config["games"]["ipd"].get("p").asDouble();
-  double s = config["games"]["ipd"].get("s").asDouble();
-  double m = config["games"]["ipd"].get("m").asDouble();
-  double c = config["games"]["ipd"].get("c").asDouble();
+  double t = config["games"]["ipd"]["t"].asDouble();
+  double r = config["games"]["ipd"]["r"].asDouble();
+  double p = config["games"]["ipd"]["p"].asDouble();
+  double s = config["games"]["ipd"]["s"].asDouble();
+  double m = config["games"]["ipd"]["m"].asDouble();
+  double c = config["games"]["ipd"]["c"].asDouble();
 
   matrix::Matrix payoff(3,3);
           //AllC                    //ALLD                //TFT
@@ -52,7 +52,7 @@ matrix::Matrix rps_payoff()
 
 /*rock*/        payoff(1,1) = 0;    payoff(1,2) = -1;  payoff(1,3) = 1;
 /*paper*/       payoff(2,1) = 1;    payoff(2,2) = 0;   payoff(2,3) = -1;
-/*scissors*/    payoff(3,1) = -1;   rps(3,2) = 1;   payoff(3,3) = 0;
+/*scissors*/    payoff(3,1) = -1;   payoff(3,2) = 1;   payoff(3,3) = 0;
 
   return payoff;
 }
@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
     try
     {
         // initialise random number generator
-        srand (time(NULL))
+        srand (time(NULL));
 
         //parse configuration json file
         std::ifstream file_input("config.json");
