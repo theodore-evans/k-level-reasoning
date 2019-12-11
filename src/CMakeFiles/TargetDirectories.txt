@@ -1,0 +1,3 @@
+/Users/theoevans/k-level-reasoning/model/CMakeFiles/rebuild_cache.dir
+/Users/theoevans/k-level-reasoning/model/CMakeFiles/edit_cache.dir
+/Users/theoevans/k-level-reasoning/model/CMakeFiles/k-level-reasoning.app.dir
