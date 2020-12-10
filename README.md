@@ -5,4 +5,4 @@ MPhys Physics master's research thesis, focusing on developing agent-based model
 
 Supervised by Dr. Tobias Galla, School of Physics and Astronomy, University of Manchester
 
-Work in collaboration with David Lecutie
+Work in collaboration with David Lecutier
